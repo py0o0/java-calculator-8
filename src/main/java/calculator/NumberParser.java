@@ -8,6 +8,10 @@ public class NumberParser {
         numbers = new int[token.length];
 
         for(int i = 0; i < token.length; i++) {
+            if(token[i].isEmpty()){
+                numbers[i] = 0;
+                continue;
+            }
             try {
                 numbers[i] = Integer.parseInt(token[i]);
             } catch (NumberFormatException e) {

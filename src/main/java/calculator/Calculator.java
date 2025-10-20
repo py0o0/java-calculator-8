@@ -4,7 +4,7 @@ public class Calculator {
 
     public static int add(String input) {
         if(input == null || input.isEmpty()){
-            return 0;
+            throw new IllegalArgumentException("입력이 존재하지 않습니다.");
         }
         DelimiterParser delimiterParser = new DelimiterParser(input);
         String delimiter = delimiterParser.getDelimiter();
