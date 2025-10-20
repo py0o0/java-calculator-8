@@ -12,7 +12,13 @@ public class DelimiterParser {
                 throw new IllegalArgumentException("숫자가 포함되어 있지 않습니다.");
             }
 
-            delimiter = ",|:" + "|" + temp[0].substring(2);
+            if(temp[0].substring(2).isEmpty()) { //
+                delimiter = ",|:|\n";
+            }
+            else{
+                delimiter = ",|:" + "|" + temp[0].substring(2);
+            }
+
             rawNumbers = temp[1];
         } else {
             delimiter = ",|:";
